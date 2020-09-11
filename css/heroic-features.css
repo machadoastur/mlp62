@@ -1,0 +1,118 @@
+/*!
+ * Start Bootstrap - Heroic Features (https://startbootstrap.com/template-overviews/heroic-features)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-heroic-features/blob/master/LICENSE)
+ */
+body {
+  padding-top: 16px;
+    padding-bottom: 10px;
+  
+  font-family: Arial, Helvetica, sans-serif;
+    background-color: darkseagreen;
+   
+    text-align: center;
+        /* Ubicación de la imagen */
+
+background-image: url(../images/fondo13.webp);
+
+/* Para dejar la imagen de fondo centrada, vertical y
+
+horizontalmente */
+
+background-position: center center;
+
+/* Para que la imagen de fondo no se repita */
+
+background-repeat: no-repeat;
+
+/* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+
+background-attachment: fixed;
+
+/* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+
+background-size: cover;
+ 
+
+}
+#contenedorPrimera{
+  visibility: hidden;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  text-align: center;
+  background-color: #98FB98;
+ 
+  margin-top: 3vh;
+    
+  height: 38vh;
+ 
+}
+
+
+
+footer {
+  background-color:darkred;
+  color: gold;
+  position: fixed;
+  bottom: 0;    
+}
+
+.sayonara{
+  display: none;
+}
+
+
+/* Responsive columns */
+@media screen and (max-width: 720px) {
+
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+
+img{
+    max-width: 18%;
+    max-height: 18vh;
+}
+
+.miCon{
+    width: 64px;
+}

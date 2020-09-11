@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138580846-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-138580846-1');
+</script>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="App familiar, incluye firebase y PWA, es una práctica de programación">
+  <meta name="keywords" content="PRESEENT, FAMILY, WISH, 
+BIRTHDAY, REGALO, FAMILIA, DESEO, CUMPLEAÑOS">
+  <meta name="author" content="Miguel Machado y aportaciones de la web">
+  <meta name="theme-color" content="#8FBC8B">
+  <title>¡Me lo pido 2.0!</title>
+  <link rel="manifest" href="manifest.json" />
+
+     <link rel="icon" type="images/png" href="images/icons/icon-16x16.png" />
+
+  <!-- Bootstrap core CSS -->
+  <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+   integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="css/heroic-features.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+ 
+ <header class="p-5 mt-2 font-italic text-warning" id="vocero" >
+       <span><img src="" alt=""></span>
+       <h1 class="font-weight-bold" >¡Bienvenido a mi página!</h1>
+       <h3>Gracias por visitarme. Si quieres hacerme algún regalo, en esta página encontrarás algunos de los objetos que me interesan</h3>
+       <p class="font-italic text-warning">Google me obliga a incluir un formulario de entrada con vuestro email. Yo no quería...</p>
+   </header>
+    
+
+      
+      
+      
+     
+      <!--///////////////////////////////////////////-->
+       <div class="container p-3 mt-2 mb-2 " id="contendorSiguientes">     
+   
+ <h4>Ya has estado</h4>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Correo electrónico</label>
+    <input type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Tu email" id="email2">
+<!--    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Contraseña</label>
+    <input type="password" class="form-control" id="password2" placeholder="Tu contraseña">
+  </div>
+
+  <button  class="btn btn-warning mt-1" onclick="ingresar()">¡Otra vez!</button>
+
+   </div>  
+       
+
+    
+    <!--  entrada de nuevo-->
+     <!-- contenedor para primer registro-->
+     <div class="container"id="metacontainer">
+      <div class="container mt-2 p-3 bg-primary" id="contenedorPrimera">     
+              <h4>Primer registro</h4>
+       <div class="form-group">
+         <label for="exampleInputEmail1">Correo electrónico</label>
+         <input type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Tu email" id="email">
+     <!--    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+       </div>
+       <div class="form-group">
+         <label for="exampleInputPassword1">Contraseña</label>
+         <input type="password" class="form-control" id="password" placeholder="Tu contraseña">
+       </div>
+     
+       <button  class="btn btn-success" onclick="registrar()">¡Adentro!</button>
+     
+        </div>   
+    
+ </div> <!--Metacontainer-->   
+
+  
+<div id="contenido">
+   
+</div>
+  
+
+  <div class="row">
+<div id="gatos"></div>
+</div>
+
+   <button type="button" class="btn btn-primary btn-lg btn-block  mr-3 mt-3" id="pase" onclick="administra()">Área de administración</button>
+   
+   <div class="container" id="administrador" >
+
+  <section id="about">
+    <div class="container" id="form4">
+           <h1 class="">Agregar idea</h1>
+      <input type="text" id="nombre" placeholder="Nombre/Título" class="form-control my-1">
+      <input type="text" id="origen" placeholder="Editorial/Fabricante" class="form-control my-1">
+      <input type="text" id="precio" placeholder="Importe aprox." class="form-control my-1">
+      <input type="url" id="enlace" placeholder="Enlace" class="form-control my-1">
+      <input type="url" id="foto" placeholder="Foto" class="form-control my-1">
+      <button class="btn btn-info" id="btn1B" onclick="incluir()">Guardar</button>
+    </div>
+
+    <div class="container mt-3">
+     <h2>Lista de deseos:</h2>
+      <table id="tablero2" class="table-responsive">
+      <thead>
+        <tr class="tr2">
+          <th scope="col" style="display: none" >id</th>
+          <th scope="col"> Nombre</th>
+          <th scope="col">Origen</th>
+          <th scope="col">Precio</th>
+           <th scope="col">foto</th>
+          <th scope="col">Enlace</th>
+            <th scope="col">Borrar</th>
+          <th scope="col">Editar</th>
+        </tr>
+  
+      </thead>
+      <tbody id="tabla2">
+  
+  
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+</div>
+
+  <!-- Footer -->
+  <footer class="footer mt-auto py-3" id='queso'>
+    <div class="container">
+      <audio src="./images/celebration.mp3" autoplay controls></audio>
+    </div>
+    <!-- /.container -->
+  </footer>
+    <!-- scripts-->
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+     crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" 
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+
+
+
+<script src="code.js">
+    </script>
+</body>
+
+</html>
