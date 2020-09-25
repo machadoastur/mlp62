@@ -1,6 +1,3 @@
-console.log('Hola js');
-
-
 if ('serviceWorker' in navigator) {
     try {
         let serviceWorker = navigator.serviceWorker.register('./sw.js');
@@ -82,12 +79,28 @@ user.sendEmailVerification().then(function() {
 function ingresar(){
         var email2 = document.getElementById('email2').value;
     var password2 = document.getElementById('password2').value;
+    var mail2 = document.getElementById('email2');
+    var pss2 =  document.getElementById('password2');
     firebase.auth().signInWithEmailAndPassword(email2, password2).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
 
   // ...
+  if(!user){
+    console.log("No te conozco");
+    var contPrim = document.querySelector("#contenedorPrimera");
+    var bocazas = document.querySelector("#vocero");
+    var bmtI = document.querySelector("#btnI");
+    var conSig = document.querySelector("#contenedorSiguientes");
+        contPrim.style.display = "block";
+        bocazas.classList.add("sayonara");
+        mail2.style.display="none";
+        pss2.style.display="none";
+        bmtI.style.display="none";
+        
+       
+  }
 });
 
     console.log(`Ìngresó de nuevo ${email2}`)
@@ -114,8 +127,7 @@ console.log(`Hay usuario: ${user.email}`);
 
 <button type="button" class="btn btn-danger mt-1 ml-3" onclick="salir()">¿Te sales'</button>
    `; 
-//       var miCar = document.getElementById('careto'); 
-//    miCar.innerHTML = `<img src=${user.photoURL} alt=${user.displayName}><p>¡Bienvenido! ${user.displayName}`;
+
   var email2 = document.getElementById('email2');
     var password2 = document.getElementById('password2');
       email2.value='';
@@ -128,8 +140,10 @@ console.log(`Hay usuario: ${user.email}`);
           
           var miVoz = document.getElementById('vocero');
           miVoz.innerHTML = `<h1 class="font-weight-bold" >Bienvenido, ${user.email}</h1>`;
-          
-      }  //Saludamos al usuario
+          //Saludamos al usuario
+      }  else{
+        
+      }
       
     pinTar() //Lanzamos la baraja
     
@@ -165,11 +179,19 @@ function salir(){
       var db = firebase.firestore();
 
   db.collection("deseos").onSnapshot((querySnapshot) => {
-  
+
+
+
     querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data().nombre}`);
+
+
+    console.log(`${doc.id} => ${doc.data().nombre}`);
        var misGatos = document.getElementById('gatos');
     
+     
+     
+
+      
       misGatos.innerHTML += `
 <div class="column">
     <div class="card">
@@ -185,9 +207,9 @@ function salir(){
 
   
 ` //Fin de la inclusión de código con tildes especiales
-    
-    });
 
+    });
+   
 
   });
 contSig.classList.add("sayonara");
@@ -362,17 +384,3 @@ document.getElementById('nombre').focus();
       function renacer(){
         location.reload();
       }
-
-/*
-<button  class="btn btn-success">
-
-
-</button>
-<button class="borrador" onclick="app.eliminar('${doc.id}')"></button>
-
-
-<button class="editor" onclick="app.editar('${doc.id}','${doc.data().nombre}','${doc.data().origen}',
- '${doc.data().precio}','${doc.data().enlace}' )"> <img src="images/logEdit.jpg" alt=""></button>
-
-*/
-
