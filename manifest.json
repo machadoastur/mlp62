@@ -1,6 +1,6 @@
 {
-  "name": "mlp51admin",
-  "short_name": "mlpv51",
+  "name": "mlp63admin",
+  "short_name": "mlpv63",
  "description": "Pequeña app desarrollada para que los míos sepan que me interesa, en las fechas propias de regalar algo",
   "start_url": "./?utm_source=web_app_manifest",
   "lang": "es",
